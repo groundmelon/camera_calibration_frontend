@@ -1,0 +1,17 @@
+<launch>
+	<arg name="chessboard_w" default="11"/>
+	<arg name="chessboard_h" default="8"/>
+	<arg name="square_size"  default="0.07"/>
+	<arg name="use_stereo" default="false" />
+
+	<node unless="$(arg use_stereo)" pkg="camera_calibration_frontend" type="cameracalibrator.py" name="cameracalibrator" ns="/camera"
+		args="--size $(arg chessboard_w)x$(arg chessboard_h) --square $(arg square_size)" output="screen">
+		<remap from="image" to="/image" />
+	</node>
+
+	<node if="$(arg use_stereo)" pkg="camera_calibration_frontend" type="cameracalibrator.py" name="cameracalibratorstereo"
+		args="--size $(arg chessboard_w)x$(arg chessboard_h) --square $(arg square_size)" output="screen">
+		<remap from="right" to="/camera/right" />
+		<remap from="left" to="/camera/left" />
+	</node>
+</launch>

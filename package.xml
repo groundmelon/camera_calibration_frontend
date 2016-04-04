@@ -1,0 +1,24 @@
+<package>
+  <name>camera_calibration_frontend</name>
+  <version>1.0.0</version>
+  <description>
+    camera_calibration_frontend is a frontend for getting calibration data.
+    Modified from http://wiki.ros.org/camera_calibration
+  </description>
+  <author>LIU Tianbo</author>
+  <author>James Bowman</author>
+  <author>Patrick Mihelich</author>
+  <maintainer email="liutianbocn@gmail.com">Liu Tianbo</maintainer>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>image_geometry</run_depend>
+  <run_depend>message_filters</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_srvs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+
+  <license>BSD</license>
+
+</package>
