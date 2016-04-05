@@ -1,6 +1,6 @@
 ## Camera Calibration Frontend ##
 
-STEREO NOT FINISHED YET!
+STEREO NOT TESTED YET!
 
 Modified from [camera_calibration](http://wiki.ros.org/camera_calibration)
 
