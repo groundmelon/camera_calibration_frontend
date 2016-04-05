@@ -761,14 +761,14 @@ class MonoCalibrator(Calibrator):
                     self.good_corners.append((corners, board))
                     print(("*** Added sample %d, p_x = %.3f, p_y = %.3f, p_size = %.3f, skew = %.3f" % tuple([len(self.db)] + params)))
 
-            if self.accu_image is None:
-                self.accu_image = numpy.zeros(scrib.shape, numpy.uint8)
-            else:
-                pts = numpy.array([downsampled_corners[0][0],
-                        downsampled_corners[board.n_cols-1][0],
-                        downsampled_corners[-1][0],
-                        downsampled_corners[-(board.n_cols)][0]], numpy.int32)
-                cv2.polylines(self.accu_image, [pts], isClosed=True, color=(0,0,255), thickness=1, lineType=8) 
+                    if self.accu_image is None:
+                        self.accu_image = numpy.zeros(scrib.shape, numpy.uint8)
+                    else:
+                        pts = numpy.array([downsampled_corners[0][0],
+                                downsampled_corners[board.n_cols-1][0],
+                                downsampled_corners[-1][0],
+                                downsampled_corners[-(board.n_cols)][0]], numpy.int32)
+                        cv2.polylines(self.accu_image, [pts], isClosed=True, color=(0,0,255), thickness=1, lineType=8) 
 
         rv = MonoDrawable()
         rv.scrib = scrib
@@ -1098,14 +1098,14 @@ class StereoCalibrator(Calibrator):
                     self.good_corners.append( (lcorners, rcorners, lboard) )
                     print(("*** Added sample %d, p_x = %.3f, p_y = %.3f, p_size = %.3f, skew = %.3f" % tuple([len(self.db)] + params)))
 
-                if self.accu_image is None:
-                    self.accu_image = numpy.zeros(lgray.shape, numpy.uint8)
-                else:
-                    pts = numpy.array([ ldownsampled_corners[0][0],
-                                        ldownsampled_corners[lboard.n_cols-1][0],
-                                        ldownsampled_corners[-1][0],
-                                        ldownsampled_corners[-(lboard.n_cols)][0]], numpy.int32)
-                    cv2.polylines(self.accu_image, [pts], isClosed=True, color=(0,0,255), thickness=1, lineType=8)
+                    if self.accu_image is None:
+                        self.accu_image = numpy.zeros(lgray.shape, numpy.uint8)
+                    else:
+                        pts = numpy.array([ ldownsampled_corners[0][0],
+                                            ldownsampled_corners[lboard.n_cols-1][0],
+                                            ldownsampled_corners[-1][0],
+                                            ldownsampled_corners[-(lboard.n_cols)][0]], numpy.int32)
+                        cv2.polylines(self.accu_image, [pts], isClosed=True, color=(0,0,255), thickness=1, lineType=8)
 
         rv = StereoDrawable()
         rv.lscrib = lscrib

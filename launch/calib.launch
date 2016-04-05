@@ -6,7 +6,7 @@
 
 	<node unless="$(arg use_stereo)" pkg="camera_calibration_frontend" type="cameracalibrator.py" name="cameracalibrator" ns="/camera"
 		args="--size $(arg chessboard_w)x$(arg chessboard_h) --square $(arg square_size)" output="screen">
-		<remap from="image" to="/image" />
+        <remap from="image" to="/bluefox2/image" />
 	</node>
 
 	<node if="$(arg use_stereo)" pkg="camera_calibration_frontend" type="cameracalibrator.py" name="cameracalibratorstereo"

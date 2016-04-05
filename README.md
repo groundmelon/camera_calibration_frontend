@@ -13,3 +13,5 @@ For example:
 ![extra_window](extra_window.png?raw=true)
 
 There is also another simple and naive tool: publish_calib_file.py, for publishing all png files in the current folder.
+
+There is also a python script `kalibr_camera_focus` from https://github.com/ethz-asl/kalibr/blob/master/aslam_offline_calibration/kalibr/python/kalibr_camera_focus to help adjusting focus of the camera.
