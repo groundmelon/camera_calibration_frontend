@@ -373,7 +373,7 @@ class OpenCVCalibrationNode(CalibrationNode):
 
         self.queue_display.append(display)
 
-        if drawable.extra_image:
+        if drawable.extra_image is not None:
             self.queue_extra_display.append(drawable.extra_image)
 
 
